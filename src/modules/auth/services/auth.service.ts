@@ -3,13 +3,15 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import { compare, hash } from 'bcryptjs';
+
+import { IUserAcessToken } from 'src/modules/user/interfaces/user-token.interface';
 import { IAuthService } from '../interfaces/auth.service.interface';
 import { ISigninAuth } from '../entities/signin';
 import { ISignupAuth } from '../entities/signup';
-import { UserRepository } from 'src/database/repositories/users.repositories';
-import { JwtService } from '@nestjs/jwt';
-import { compare, hash } from 'bcryptjs';
-import { IUserAcessToken } from 'src/modules/user/interfaces/user-token.interface';
+
+import { UserRepository } from '../../../database/repositories/users.repositories';
 
 @Injectable()
 export class AuthService implements IAuthService {

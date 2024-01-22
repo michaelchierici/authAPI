@@ -1,10 +1,10 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
-import { IsPublic } from 'src/shared/decorators/IsPublic';
+import { IsPublic } from '../../../shared/decorators/IsPublic';
 import { IAuthService } from '../interfaces/auth.service.interface';
 import { AAuthService } from '../abstracts/auth.service.abstract';
 import { SigninDto } from '../dto/signin.dto';
 import { SignupDto } from '../dto/signup.dto';
-import { IUserAcessToken } from 'src/modules/user/interfaces/user-token.interface';
+import { IUserAcessToken } from '../../user/interfaces/user-token.interface';
 
 @IsPublic()
 @Controller('auth')
